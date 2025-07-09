@@ -1,0 +1,102 @@
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oxanium:wght@200..800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+body {
+  margin: 0;
+  padding: 0;
+  background: #fafafa;
+  font-family: "Montserrat", "Segoe UI", Arial, sans-serif;
+}
+
+.gallery-title {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-top: 40px;
+  margin-bottom: 10px;
+  letter-spacing: -1px;
+  color: #232323;
+}
+
+/* Lightbox Styles */
+#lightbox-modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.6);
+  flex-direction: column;
+  transition: background 0.2s;
+}
+#lightbox-modal[style*="display: flex"] {
+  display: flex !important;
+}
+#lightbox-backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  background: transparent;
+  cursor: zoom-out;
+}
+#lightbox-img {
+  max-width: 90vw;
+  max-height: 80vh;
+  border-radius: 16px;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.25);
+  z-index: 1001;
+  background: #fff;
+  object-fit: contain;
+  margin: 0 auto;
+  display: block;
+}
+#lightbox-close {
+  position: absolute;
+  top: 32px;
+  right: 48px;
+  font-size: 2.5rem;
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  z-index: 1002;
+  padding: 0 12px;
+  line-height: 1;
+  transition: color 0.2s;
+}
+#lightbox-close:hover {
+  color: #ff5252;
+}
+
+.gallery-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
+  padding: 40px 5vw;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.gallery-container img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 14px;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.07);
+  background: #eaeaea;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.gallery-container img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 32px rgba(0, 0, 0, 0.13);
+}
